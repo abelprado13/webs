@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Feliz Cumpleaños! - Temática Stitch</title>
+    <style>
+        /* Colores temáticos */
+        :root {
+            --fondo-azul: #7b8cdb; 
+            --stitch-azul: #3c5c9e; 
+            --stitch-rosa: #e08eb4; 
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--fondo-azul);
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* --- DECORACIÓN DE FLORES --- */
+        .flor {
+            position: absolute;
+            font-size: 3rem;
+            animation: flotar 4s ease-in-out infinite;
+            z-index: 1;
+            user-select: none;
+        }
+
+        /* Posiciones de las flores */
+        .flor-1 { top: 10%; left: 5%; animation-delay: 0s; }
+        .flor-2 { top: 20%; right: 10%; animation-delay: 1s; font-size: 4rem;}
+        .flor-3 { bottom: 15%; left: 10%; animation-delay: 2s; }
+        .flor-4 { bottom: 10%; right: 15%; animation-delay: 0.5s; font-size: 3.5rem;}
+        .flor-5 { top: 50%; left: 2%; animation-delay: 1.5s; }
+        .flor-6 { top: 60%; right: 5%; animation-delay: 2.5s; }
+        .flor-7 { top: 5%; left: 40%; animation-delay: 0.8s; font-size: 2.5rem;}
+
+        @keyframes flotar {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+
+        /* --- CARTEL CENTRAL --- */
+        .cartel {
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 8px solid var(--stitch-azul);
+            border-radius: 30px;
+            padding: 40px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
+            border-top-left-radius: 100px 50px;
+            border-top-right-radius: 100px 50px;
+        }
+
+        .titulo {
+            color: var(--stitch-azul);
+            font-size: 3.5rem;
+            margin-top: 0;
+            text-shadow: 2px 2px 0px var(--stitch-rosa);
+            letter-spacing: 2px;
+            animation: latido 1.5s infinite;
+        }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .mensaje {
+            color: #333;
+            font-size: 1.8rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+            font-weight: bold;
+        }
+
+        .mensaje span {
+            color: var(--stitch-rosa);
+            text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+        }
+
+        /* --- ESTILOS PARA TU IMAGEN REAL --- */
+        .imagen-stitch {
+            max-width: 100%; /* Para que no se salga del cartel */
+            height: auto;
+            max-height: 300px; /* Altura máxima para que no sea gigante */
+            margin: 20px auto;
+            display: block;
+            /* Animación opcional para que Stitch "baile" un poco */
+            animation: flotar 3s ease-in-out infinite; 
+        }
+
+        /* Responsive para celulares */
+        @media (max-width: 600px) {
+            .titulo { font-size: 2.2rem; }
+            .mensaje { font-size: 1.3rem; }
+            .cartel { padding: 20px; }
+            .flor { font-size: 2rem; }
+            .imagen-stitch { max-height: 200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- FLORES DECORATIVAS -->
+    <div class="flor flor-1">🌸</div>
+    <div class="flor flor-2">🌺</div>
+    <div class="flor flor-3">🌼</div>
+    <div class="flor flor-4">🌻</div>
+    <div class="flor flor-5">🌷</div>
+    <div class="flor flor-6">🌸</div>
+    <div class="flor flor-7">🌺</div>
+
+    <!-- CARTEL CENTRAL -->
+    <div class="cartel">
+        <h1 class="titulo">¡FELIZ CUMPLEAÑOS!</h1>
+        
+        <!-- AQUÍ VA TU IMAGEN -->
+        <!-- CAMBIA "stitch.jpg" POR EL NOMBRE EXACTO DE TU ARCHIVO -->
+        <img src="kawaii-stitch-pack.png" alt="Stitch" class="imagen-stitch">
+
+        <p class="mensaje">
+            <span>Se te quiere,</span><br>
+            <span>se te ama</span><br>
+            y <span>se te aprecia</span> muchísimo. 💙
+        </p>
+    </div>
+
+</body>
+</html>
